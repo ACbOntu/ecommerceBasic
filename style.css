@@ -86,9 +86,11 @@ p{
 	min-width: 250px;
 	margin-bottom: 30px;
 	
+	
 }
-.col-3 img{
-	width: 100;
+.row .col-3 img{
+	width: 400px;
+	margin-left: 20px;
 }
 .small-container{
 	max-width: 1080px;

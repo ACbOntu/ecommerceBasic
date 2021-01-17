@@ -40,10 +40,7 @@
 	</div>
 	<!-- featured categories -->
 
-
-	<div class="categories">
-		<div class="small-container">
-			<div class="row">
+	<div class="row" style="margin-top:40px;">
 				<div class="col-3">
 					<img src="images/category-1.jpg" alt="">
 				</div>
@@ -54,6 +51,10 @@
 					<img src="images/category-3.jpg" alt="">
 				</div>
 		    </div>
+
+	<div class="categories">
+		<div class="small-container">
+		
 		</div>
 	</div>
 
