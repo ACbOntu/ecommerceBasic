@@ -1,6 +1,7 @@
 <?php
 session_start();
-session_destroy();
+$_SESSION['name'] = null;
+$_SESSION['id'] = null;
 
 header("location:index.php");
 

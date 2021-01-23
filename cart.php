@@ -41,7 +41,19 @@
                 <div class="cart-info">
                     <img src="images/buy-1.jpg" >
                     <div>
-                        <p>Red Printed Tshirt</p>
+
+<?php
+
+$id = $_GET['id'];
+include 'config.php';
+$query = "SELECT * FROM products WHERE id = ".$id;
+$result = mysqli_query($con,$query);
+if(mysqli_num_rows($result) > 0) {
+ while( $row = mysqli_fetch_array($result)){
+echo '<p>'.$row['product_name'].'</p>';
+?>
+
+                        
                         <small>Price:$50.00</small>
                         <br>
                         <a href=""> Remove</a>
@@ -51,36 +63,10 @@
             <td><input type="number" value="1"></td>
             <td>$50.00</td>
         </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="images/buy-2.jpg" >
-                    <div>
-                        <p>Red Printed Tshirt</p>
-                        <small>Price:$50.00</small>
-                        <br>
-                        <a href=""> Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$75.00</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="images/buy-3.jpg" >
-                    <div>
-                        <p>Red Printed Tshirt</p>
-                        <small>Price:$50.00</small>
-                        <br>
-                        <a href=""> Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$75.00</td>
-        </tr>
+      <?php
+ }
+}
+      ?>
     </table>
 
 <div class="total-price">

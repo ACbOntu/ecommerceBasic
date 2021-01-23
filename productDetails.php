@@ -10,7 +10,16 @@
 
 </head>
 <body>
+<?php
 
+$id = $_GET['id'];
+include 'config.php';
+$query = "SELECT * FROM products WHERE id = ".$id;
+$result = mysqli_query($con,$query);
+if(mysqli_num_rows($result) > 0) {
+ while( $row = mysqli_fetch_array($result)){
+
+?>
 		<div class="container">
 			<div class="navbar">
 					<div class="logo">
@@ -51,8 +60,8 @@
             </div>
             <div class="col-2">
                 <p> Home / T-shirt</p>
-                <h1>Red Printed T-Shirt by HRX </h1>
-                <h4>$50.00</h4>
+                <h1> <?php echo $row['product_name']; ?> </h1>
+                <h4><?php echo $row['price']; ?></h4>
                 <select>
 
                 <option> Select Size </option>
@@ -63,15 +72,20 @@
                 <option> Small </option>
             </select>
             
-            <input type="number" value="1">
-            <a href="" class="btn"> Add to cart </a>
+            <input type="number" name="quantity" value="1">
+            <a href="cart.php?id=<?php echo $row['id'];  ?>" class="btn"> Add to cart </a>
             <h3>product Details <i class="fa fa-indent"> </i> </h3>
             <br>
-            <p>Give your summer wardrobe a style upgrade with the HRX Men's Active T-shirt. Team it with a <br> pair of shorts for your morning workout or a denims for an evening out with the guys.</p>
+            <p><?php echo $row['product_description']; ?></p>
 
             </div>
         </div>
     </div>
+
+    <?php
+ }
+}
+    ?>
 <!-- title -->
 
 <div class="small-container">
