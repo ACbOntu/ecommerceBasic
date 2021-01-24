@@ -18,7 +18,7 @@
 
     <!-- Login Form -->
     <form action="loginCheck.php" method="post">
-      <input type="text" id="login" class="fadeIn second" name="emailAdmin" placeholder="username">
+      <input type="text" id="login" class="fadeIn second" name="usernameAdmin" placeholder="username">
       <input type="password" id="password" class="fadeIn third" name="passwordAdmin" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
       <a href="registration.php">Register here</a>

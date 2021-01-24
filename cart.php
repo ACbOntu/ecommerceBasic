@@ -36,34 +36,40 @@
             <th> Quantity</th>
             <th> Subtotal</th>
         </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="images/buy-1.jpg" >
-                    <div>
-
+       
 <?php
 
-$id = $_GET['id'];
+
+$user = $_SESSION['adminId'];
 include 'config.php';
-$query = "SELECT * FROM products WHERE id = ".$id;
+$sum = 0;
+
+
+
+$query = "SELECT * FROM cart WHERE user_id = ".$user;
 $result = mysqli_query($con,$query);
 if(mysqli_num_rows($result) > 0) {
  while( $row = mysqli_fetch_array($result)){
-echo '<p>'.$row['product_name'].'</p>';
-?>
-
-                        
-                        <small>Price:$50.00</small>
-                        <br>
-                        <a href=""> Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$50.00</td>
-        </tr>
-      <?php
+	$query1 = "SELECT * FROM products WHERE id = ".$row['product_id'];
+	$result1 = mysqli_query($con,$query1);
+	if(mysqli_num_rows($result1) > 0) {
+	 while( $row1 = mysqli_fetch_array($result1)){
+echo ' <tr>
+<td>
+	<div class="cart-info">
+		<img src="images/buy-1.jpg" >
+		<div>
+<p>'.$row1['product_name'].'</p><small>'.$row1['price'].'</small><br> <a href="removeFromCart.php?id='.$row['id'].'"> Remove</a>
+</div>
+</div>
+</td><td>'.$row['quantity'].'</td><td>';
+ $temp = $row['quantity']*$row1['price']; 
+						echo $temp.'</td></tr>';
+					$sum = $sum + $temp;
+			
+			
+ }
+}
  }
 }
       ?>
@@ -73,15 +79,15 @@ echo '<p>'.$row['product_name'].'</p>';
     <table>
         <tr>
             <td>Subtotal</td>
-            <td>$200.00</td>
+            <td><?php echo $sum;  ?></td>
         </tr>
         <tr>
             <td>Tax</td>
-            <td>$35.00</td>
+            <td>50</td>
         </tr>
         <tr>
             <td>Total</td>
-            <td>$230.00</td>
+            <td><?php echo $sum+50;  ?></td>
         </tr>
     </table>
 </div>

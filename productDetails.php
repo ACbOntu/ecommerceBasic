@@ -63,7 +63,6 @@ if(mysqli_num_rows($result) > 0) {
                 <h1> <?php echo $row['product_name']; ?> </h1>
                 <h4><?php echo $row['price']; ?></h4>
                 <select>
-
                 <option> Select Size </option>
                 <option> XXL </option>
                 <option> XL </option>
@@ -71,13 +70,15 @@ if(mysqli_num_rows($result) > 0) {
                 <option> medium </option>
                 <option> Small </option>
             </select>
-            
-            <input type="number" name="quantity" value="1">
-            <a href="cart.php?id=<?php echo $row['id'];  ?>" class="btn"> Add to cart </a>
+            <form action="saveToCart.php" method="post">
+            <input type="number" name="quantity"> pieces
+            <input type="hidden" value = "<?php echo $row['id']; ?>" name="id" >
+            <input type="submit" class="btn btn-info" value="Add to cart">
+            </form>
             <h3>product Details <i class="fa fa-indent"> </i> </h3>
             <br>
             <p><?php echo $row['product_description']; ?></p>
-
+            
             </div>
         </div>
     </div>

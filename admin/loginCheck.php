@@ -1,14 +1,24 @@
 <?php
 
-  $email =   $_POST['emailAdmin'];
+  $username =   $_POST['usernameAdmin'];
   $password =   $_POST['passwordAdmin'];
-  if($email == 'sayma' && $password=='123'){
-      session_start();
-      $_SESSION['admin'] = 'true';
+  include 'config.php';
+  
+  $query = "SELECT * FROM admins WHERE username = '$username' AND password = '$password' ";
+  $result = mysqli_query($con,$query);
+  
+  if(mysqli_num_rows($result) > 0) {
+  
+    session_start();
+    $row = mysqli_fetch_array($result);
+    
+    $_SESSION['admin'] = $row['username'];
+    $_SESSION['adminId'] = $row['id'];
+      
       header("location:index.php");
-   
   }
-  else{
-      echo "<h2>Sorry! You are not authorized.</h2>";
-  }
+    else {
+      echo "Error: " . $query . "<br>" . mysqli_error($con);
+    }
+ 
 ?>
