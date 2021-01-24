@@ -13,15 +13,15 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-    <h3>Admin Login</h3>
+    <h3>Admin Registration</h3>
     </div>
 
     <!-- Login Form -->
-    <form action="loginCheck.php" method="post">
-      <input type="text" id="login" class="fadeIn second" name="emailAdmin" placeholder="username">
+    <form action="regInsert.php" method="post">
+      <input type="text" id="login" class="fadeIn second" name="usernameAdmin" placeholder="username">
+      <input type="text" id="login" class="fadeIn second" name="emailAdmin" placeholder="email">
       <input type="password" id="password" class="fadeIn third" name="passwordAdmin" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-      <a href="registration.php">Register here</a>
+      <input type="submit" class="fadeIn fourth" value="Register">
     </form>
 
 

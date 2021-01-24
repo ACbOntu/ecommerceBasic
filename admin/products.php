@@ -9,7 +9,7 @@
       <th scope="col">description</th>
       <th scope="col">price</th>
       <th scope="col">image</th>
-      <th scope="col">Action</th>
+      <th scope="col" colspan="2">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -25,10 +25,10 @@ if(mysqli_num_rows($result) > 0) {
  <td>'.$row['image'].'</td>';
  echo '<form action="edit.php" method="post">';
  echo '<input type="hidden" name="id" value="'.$row['id'].'">';
-echo '<td><input type="submit" class="btn btn-success" value="Edit"></form>';
+echo '<td><input type="submit" class="btn btn-success" value="Edit"></td></form>';
 echo '<form action="deleteProduct.php" method="post">';
  echo '<input type="hidden" name="id" value="'.$row['id'].'">';
-echo '&nbsp;<input type="submit" class="btn btn-danger" value="Delete"></td></tr></form>';
+echo '&nbsp;<td><input type="submit" class="btn btn-danger" value="Delete"></td></tr></form>';
 
 }
 }
