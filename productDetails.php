@@ -40,7 +40,7 @@ if(mysqli_num_rows($result) > 0) {
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
-                <img src="images/gallery-1.jpg" width="100%" id="ProductImg">
+                <img src="admin/uploads/<?php $row['image'] ?>" width="100%" id="ProductImg">
 
                 <div class="small-img-row">
                     <div class="small-img-col">

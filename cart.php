@@ -40,7 +40,7 @@
 <?php
 
 
-$user = $_SESSION['adminId'];
+$user = $_SESSION['id'];
 include 'config.php';
 $sum = 0;
 

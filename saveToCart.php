@@ -2,7 +2,7 @@
 session_start();
 $id = $_POST['id'];
 $x = $_POST['quantity'];
-$user = $_SESSION['adminId'];
+$user = $_SESSION['id'];
 
 include 'config.php';
 
