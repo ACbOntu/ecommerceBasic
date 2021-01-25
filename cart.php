@@ -62,8 +62,16 @@ echo ' <tr>
 <p>'.$row1['product_name'].'</p><small>'.$row1['price'].'</small><br> <a href="removeFromCart.php?id='.$row['id'].'"> Remove</a>
 </div>
 </div>
-</td><td>'.$row['quantity'].'</td><td>';
- $temp = $row['quantity']*$row1['price']; 
+</td>';
+if($row['quantity']!=0){
+	$temp = $row['quantity']*$row1['price'];
+	echo '<td>'.$row['quantity'].'</td><td>'; 
+}
+else{
+	echo '<td>1</td><td>';
+	$temp = $row1['price'];
+}
+
 						echo $temp.'</td></tr>';
 					$sum = $sum + $temp;
 			

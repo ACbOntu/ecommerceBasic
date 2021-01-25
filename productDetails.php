@@ -44,16 +44,16 @@ if(mysqli_num_rows($result) > 0) {
 
                 <div class="small-img-row">
                     <div class="small-img-col">
-                        <img src="images/gallery-1.jpg" width="100" class="ProductImg">
+                        <img src="images/gallery-1.jpg" width="100" class="smallImage1">
                     </div>
                      <div class="small-img-col">
-                        <img src="images/gallery-2.jpg" width="100" class="ProductImg">
+                        <img src="images/gallery-2.jpg" width="100" class="smallImage2">
                     </div>
                      <div class="small-img-col">
-                        <img src="images/gallery-3.jpg" width="100" class="ProductImg">
+                        <img src="images/gallery-3.jpg" width="100" class="smallImage3">
                     </div>
                      <div class="small-img-col">
-                        <img src="images/gallery-4.jpg" width="100" class="ProductImg">
+                        <img src="images/gallery-4.jpg" width="100" class="smallImage4">
                     </div>
                 </div>
 
@@ -215,23 +215,25 @@ if(mysqli_num_rows($result) > 0) {
 
 <script>
     var ProductImg = document.getElementById("ProductImg");
-    var SmallImg = document.getElementByClassName("small-img");
-
-    SmallImg[0].onclick = function()
+    var SmallImg1 = document.getElementByClassName("smallImage1");
+    var SmallImg2 = document.getElementByClassName("smallImage2");
+    var SmallImg3 = document.getElementByClassName("smallImage3");
+    var SmallImg4 = document.getElementByClassName("smallImage4");
+    SmallImg1.onclick = function()
     {
-        ProductImg.src = SmallImg[0].src;
+        ProductImg.src = SmallImg1.src;
     }
-     SmallImg[1].onclick = function()
+     SmallImg2.onclick = function()
     {
-        ProductImg.src = SmallImg[1].src;
+        ProductImg.src = SmallImg2.src;
     }
-     SmallImg[2].onclick = function()
+     SmallImg3.onclick = function()
     {
-        ProductImg.src = SmallImg[2].src;
+        ProductImg.src = SmallImg3.src;
     }
-     SmallImg[3].onclick = function()
+     SmallImg4.onclick = function()
     {
-        ProductImg.src = SmallImg[3].src;
+        ProductImg.src = SmallImg4.src;
     }
 
 

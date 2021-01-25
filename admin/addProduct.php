@@ -14,7 +14,7 @@
 
   <div class="container-fluid mt-2">
 
-<form action="createProduct.php" method="post">
+<form action="createProduct.php" method="post"  enctype="multipart/form-data">
   <div class="form-group">
     <label for="exampleInputEmail1">Prpduct Name</label>
     <input type="text" name="productName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Product name">
@@ -36,7 +36,7 @@
   </div>
 
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <input type="submit" name="submit" value="Submit" class="btn btn-primary">
 </form>
 
 </div>

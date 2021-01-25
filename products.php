@@ -50,8 +50,8 @@ if(mysqli_num_rows($result) > 0) {
 
  echo   '
     <div class="col-4">
-      <a href = "productDetails.php?id='.$row['id'].'">  <img src="images/product-2.jpg" alt=""> </a>
-       <h4>'.$row['product_name'].'</h4>
+      <a href = "productDetails.php?id='.$row['id'].'">  <img src="admin/uploads/'.$row['image'].'" alt=""> </a>
+	  <a href = "productDetails.php?id='.$row['id'].'"><h4>'.$row['product_name'].'</h4> </a>
        <div class="rating">    
         <i class="fa fa-star" ></i>
            <i class="fa fa-star" ></i>
@@ -59,7 +59,7 @@ if(mysqli_num_rows($result) > 0) {
            <i class="fa fa-star-half-o" ></i>
            <i class="fa fa-star-o" ></i>
    </div> 
-       <p>$50.00</p>
+       <p>'.$row['price'].'</p>
    </div>
    ';
  }
